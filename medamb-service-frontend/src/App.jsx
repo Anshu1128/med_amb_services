@@ -5,6 +5,7 @@ import Login from "./authgaurd/login";
 import Signup from "./authgaurd/signup";
 import InfoAmb from "./components/InfoAmb";
 import Home from "./components/home";
+import AboutUs from './components/AboutUs';
 function App() {
   // const About = () => <h2>About Us</h2>;
   // const Helpline = () => <h2>Helpline</h2>;
@@ -21,8 +22,8 @@ function App() {
       <div className="container mt-3">
         <Routes>
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/helpline" element={<Helpline />} />
+          <Route path="/about" element={<AboutUs />} />
+          {/*<Route path="/helpline" element={<Helpline />} />
           <Route path="/blood-test" element={<BloodTest />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/bills" element={<Bills />} />*/}
