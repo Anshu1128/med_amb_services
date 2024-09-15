@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const login = () => {
+const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
-
+    const navigate = useNavigate();
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -16,6 +16,7 @@ const login = () => {
         try {
             const res = await axios.post('http://localhost:5000/login', formData);
             setMessage('Login successful');
+            navigate('/home')
             console.log(res.data);
         } catch (err) {
             setMessage('Invalid credentials');
@@ -66,4 +67,4 @@ const login = () => {
     )
 }
 
-export default login
+export default Login

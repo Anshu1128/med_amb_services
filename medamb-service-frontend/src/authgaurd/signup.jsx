@@ -1,8 +1,7 @@
-import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const signup = () => {
+const Signup = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
@@ -76,4 +75,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup

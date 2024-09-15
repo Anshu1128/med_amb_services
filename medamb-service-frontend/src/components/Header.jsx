@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 const Header = () => {
   return (
@@ -11,7 +10,7 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link className="nav-link btn btn-outline-info text-white px-3" to="/">Home</Link>
+            <Link className="nav-link btn btn-outline-info text-white px-3" to="/home">Home</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link btn btn-outline-info text-white px-3" to="/about">About Us</Link>
