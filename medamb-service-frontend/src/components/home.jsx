@@ -1,8 +1,9 @@
+import InfoAmb from "./InfoAmb"
 
 
 const Home = () => {
   return (
-    <div>home page</div>
+    <div><InfoAmb /></div>
   )
 }
 

@@ -36,8 +36,8 @@ const AboutUs = () => {
         <Col md={12}>
           <h2>What Our Patients Say</h2>
           <blockquote>
-            "The ambulance team was very professional and caring. They made me feel safe and 
-            comfortable during my transportation." - [Patient Name]
+          `The ambulance team was very professional and caring. They made me feel safe and 
+            comfortable during my transportation.` - [Patient Name]
           </blockquote>
         </Col>
       </Row>

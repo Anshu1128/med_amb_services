@@ -1,12 +1,14 @@
-import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { saveSession } from '../services/session';
+import { useAuth } from '../hooks/useAuth';
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
+    const {setIsLoggedIn,setUser}=useAuth();
     const navigate = useNavigate();
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,8 +18,10 @@ const Login = () => {
         try {
             const res = await axios.post('http://localhost:5000/login', formData);
             setMessage('Login successful');
+            saveSession(res?.data?.token,res?.data?.user)
+            setUser(res?.data?.user)
+            setIsLoggedIn(true);
             navigate('/home')
-            console.log(res.data);
         } catch (err) {
             setMessage('Invalid credentials');
             console.log(err);
@@ -60,7 +64,7 @@ const Login = () => {
                 </form>
                 <p>{message}</p>
                 <p className="mt-3">
-                    Haven't an account? <Link to="/signup">Create</Link>
+                    Havent an account? <Link to="/signup">Create</Link>
                 </p>
             </div>
         </div>
